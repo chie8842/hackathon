@@ -1,4 +1,4 @@
-import argparase
+import argparse
 from flask import Flask
 from flask import request
 from flask import jsonify
@@ -16,13 +16,11 @@ import params
 # logger
 # logger = logger_config('test', loglevel='WARN', log_file='log/log.txt')
 # logger.warning('This is the test logging')
-parser.add_argument('--secret', type=str,
-                    help='secret manager for openai_api')
 
 apikey = params.apikey
 
 # TODO: add integration to get openAI api key from AWS Secret manager
-def get_api_key:
+def get_api_key():
     return apikey
 
 
@@ -32,7 +30,8 @@ app = Flask(__name__)
 def vectorize_all():
     # Your logic for vectorize_all endpoint here
     # Example: vectorize all data sent in the request
-    data = request.json['foo']
+    connection_string = request.json['connection_string']
+    db = request.json['']
     # Perform vectorization
     # vectorized_data = vectorize(data)
     #return jsonify({"message": "Vectorization of all data performed successfully"})
