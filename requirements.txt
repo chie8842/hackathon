@@ -1,0 +1,9 @@
+langchain
+flask
+langchain
+langchain-openai
+pymongo
+bs4
+openai
+requests
+boto3
