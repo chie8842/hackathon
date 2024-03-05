@@ -11,6 +11,7 @@ from langchain.vectorstores import MongoDBAtlasVectorSearch
 from langchain.document_loaders import DirectoryLoader
 from langchain_openai import OpenAI
 from langchain.chains import RetrievalQA
+import params
 
 # logger
 # logger = logger_config('test', loglevel='WARN', log_file='log/log.txt')
@@ -18,7 +19,7 @@ from langchain.chains import RetrievalQA
 parser.add_argument('--secret', type=str,
                     help='secret manager for openai_api')
 
-apikey = ''
+apikey = params.apikey
 
 # TODO: add integration to get openAI api key from AWS Secret manager
 def get_api_key:
