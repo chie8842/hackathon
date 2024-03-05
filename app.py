@@ -1,10 +1,28 @@
-from flask import Flask, request, jsonify
+import argparase
+from flask import Flask
+from flask import request
+from flask import jsonify
 from logger import logger_config
+import boto3
 
+from pymongo import MongoClient
+from langchain_openai import OpenAIEmbeddings
+from langchain.vectorstores import MongoDBAtlasVectorSearch
+from langchain.document_loaders import DirectoryLoader
+from langchain_openai import OpenAI
+from langchain.chains import RetrievalQA
 
 # logger
 # logger = logger_config('test', loglevel='WARN', log_file='log/log.txt')
 # logger.warning('This is the test logging')
+parser.add_argument('--secret', type=str,
+                    help='secret manager for openai_api')
+
+apikey = ''
+
+# TODO: add integration to get openAI api key from AWS Secret manager
+def get_api_key:
+    return apikey
 
 
 app = Flask(__name__)
@@ -13,10 +31,11 @@ app = Flask(__name__)
 def vectorize_all():
     # Your logic for vectorize_all endpoint here
     # Example: vectorize all data sent in the request
-    data = request.json
+    data = request.json['foo']
     # Perform vectorization
     # vectorized_data = vectorize(data)
-    return jsonify({"message": "Vectorization of all data performed successfully"})
+    #return jsonify({"message": "Vectorization of all data performed successfully"})
+    return data
 
 @app.route('/vectorize_auto', methods=['POST'])
 def vectorize_auto():

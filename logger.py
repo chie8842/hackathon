@@ -1,7 +1,6 @@
 import logging
 import datetime
 import os
-from datautils.utils import make_dirs
 
 
 def logger_config(log_name, loglevel='INFO', log_file='log.txt'):
@@ -35,3 +34,7 @@ def logger_config(log_name, loglevel='INFO', log_file='log.txt'):
     logger.setLevel(loglevel)
 
     return logger
+
+def make_dirs(dirname):
+    if not os.path.isdir(dirname):
+        os.makedirs(dirname)
